@@ -9,7 +9,7 @@ $(document).ready(function(){
     prepare()
     newGame()
 })
-
+$('body').on('touchmove',function(event){event.preventDefault()})
 function prepare(){
     if(documentWidth>500){
         gridContainerWidth=500
