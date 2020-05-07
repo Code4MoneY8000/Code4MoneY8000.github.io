@@ -9,7 +9,6 @@ $(document).ready(function(){
     prepare()
     newGame()
 })
-$('body').on('touchmove',function(event){event.preventDefault()})
 function prepare(){
     if(documentWidth>500){
         gridContainerWidth=500
@@ -180,8 +179,11 @@ document.addEventListener("touchstart",function(event){
     startx = event.touches[0].pageX
     starty = event.touches[0].pageY
 })
-document.addEventListener("touchend",function(event){
+document.addEventListener('touchmove',function(event){
     event.preventDefault()
+})
+document.addEventListener("touchend",function(event){
+    
     endx = event.changedTouches[0].pageX
     endy = event.changedTouches[0].pageY
 
