@@ -76,8 +76,7 @@ function updateBoardView(){
                     "top":getPosTop(i),
                     "left":getPosLeft(j),
                     "backgroundColor":getBackgroundColor(board[i][j]),
-                    "color":getColor(board[i][j]),
-                    "fontSize":getFontSize(board[i][j])
+                    "color":getColor(board[i][j])
                     }
                 )
                 theNumCell.text(board[i][j])
@@ -85,6 +84,7 @@ function updateBoardView(){
             hasChange[i][j] = false
         }
         $(".number-cell").css("lineHeight",cellSideWidth+"px")
+        $(".number-cell").css("fontSize",0.6*cellSideWidth+"px")
     }
 }
 function isGameOver(){
