@@ -14,8 +14,11 @@ function prepare(){
         gridContainerWidth=500
         cellSpace=20
         cellSideWidth=100
-    }
-    
+    }else{
+    $(body).css({
+        "position":"fixed",
+        "top":"0px"
+    })
     $("#grid-container").css(
         {"width":gridContainerWidth-2*cellSpace,
         "height":gridContainerWidth-2*cellSpace,
@@ -27,8 +30,8 @@ function prepare(){
         {"width":cellSideWidth,
         "height":cellSideWidth,
         "borderRadius":0.02*cellSideWidth
-        }
-    )
+        })
+    }
 }
 function newGame(){
     //初始化棋盘格
@@ -76,7 +79,8 @@ function updateBoardView(){
                     "top":getPosTop(i),
                     "left":getPosLeft(j),
                     "backgroundColor":getBackgroundColor(board[i][j]),
-                    "color":getColor(board[i][j])
+                    "color":getColor(board[i][j]),
+                    "fontSize":getFontSize(board[i][j])
                     }
                 )
                 theNumCell.text(board[i][j])
@@ -84,7 +88,7 @@ function updateBoardView(){
             hasChange[i][j] = false
         }
         $(".number-cell").css("lineHeight",cellSideWidth+"px")
-        $(".number-cell").css("fontSize",0.6*cellSideWidth+"px")
+        
     }
 }
 function isGameOver(){
@@ -139,6 +143,7 @@ function generateOneNum(){
         var rannum = Math.random()<0.5?2:4
         //位置与数字对应上
         board[ranx][rany] = rannum
+        $("#number-cell-"+ranx+"-"+rany).css("fontSize",getFontSize(board[ranx][rany]))
         showNumberAnimation(ranx,rany,rannum)
         return true
     }
