@@ -27,6 +27,14 @@ function getBackgroundColor(number){
      case 8192:return "#93c";break;
  }
 }
+function getFontSize(number){
+    if(number<=1000){
+        return 0.6*cellSideWidth+"px"
+    }else{
+        return  0.4*cellSideWidth+"px"
+    }
+}
+
 function getColor(number){
     if(number<=4){
         return "#776e65"
