@@ -189,7 +189,7 @@ document.addEventListener("touchend",function(event){
 
     var delx = endx - startx
     var dely = endy - starty
-    if(Math.abs(delx)<0.1*documentWidth && Math.abs(dely)<0.1*documentWidth){
+    if(Math.abs(delx)<0.2*documentWidth && Math.abs(dely)<0.2*documentWidth){
         return
     }
     if(Math.abs(delx)>=Math.abs(dely)){
