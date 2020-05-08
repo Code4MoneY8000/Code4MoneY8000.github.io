@@ -14,11 +14,7 @@ function prepare(){
         gridContainerWidth=500
         cellSpace=20
         cellSideWidth=100
-    }else{
-    $(body).css({
-        "position":"fixed",
-        "top":"0px"
-    })
+    }
     $("#grid-container").css(
         {"width":gridContainerWidth-2*cellSpace,
         "height":gridContainerWidth-2*cellSpace,
@@ -31,7 +27,7 @@ function prepare(){
         "height":cellSideWidth,
         "borderRadius":0.02*cellSideWidth
         })
-    }
+    
 }
 function newGame(){
     //初始化棋盘格
